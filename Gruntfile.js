@@ -2,6 +2,36 @@ var fs = require('fs');
 
 module.exports = function(grunt) {
     grunt.initConfig({
+        less: {
+            build: {
+                options: {},
+                files: {
+                    'dist/style_less.css': 'src/less/style.less'
+                }
+            },
+            minified: {
+                options: {
+                    cleancss: true
+                },
+                files: {
+                    'dist/style_less.min.css': 'src/less/style.less'
+                }
+            },
+            // re-minify everything in tests/ so that they all
+            // have the same minification for comparision
+            test: {
+                options: {
+                    cleancss: true,
+                    cleancssOptions: {
+                        keepSpecialComments: '0'
+                    }
+                },
+                files: {
+                    'tests/less/style_less.min.css': 'src/less/style_less.less'
+                }
+            }
+        },
+
         jshint: {
             files: [
                 'gruntfile.js',
@@ -92,6 +122,7 @@ module.exports = function(grunt) {
 
     // Load module
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -102,10 +133,13 @@ module.exports = function(grunt) {
 
     // Create grunt task
     grunt.registerTask('build', [
+        'less:build',
+        'less:minified',
         'jshint',
         'uglify',
         'cssmin',
         'copy',
+        'less:test',
         'execute:test',
         'clean:test'
     ]);
