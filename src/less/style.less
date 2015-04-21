@@ -1,3 +1,29 @@
+@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
+}
+
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+
+.background-gradient(@style1, @style2, @alpha1: 50%, @alpha2: 50%) {
+    background-image: linear-gradient(bottom, @style1 @alpha1, @style2 @alpha2);
+    background-image: -o-linear-gradient(bottom, @style1 @alpha1, @style2 @alpha2);
+    background-image: -moz-linear-gradient(bottom, @style1 @alpha1, @style2 @alpha2);
+    background-image: -webkit-linear-gradient(bottom, @style1 @alpha1, @style2 @alpha2);
+    background-image: -ms-linear-gradient(bottom, @style1 @alpha1, @style2 @alpha2);
+    background-image: -webkit-gradient(
+        linear,
+        right bottom,
+        right top,
+        color-stop(@alpha1/100, @style1),
+        color-stop(@alpha2/100, @style2)
+    );
+}
+
 *{
     margin:0;
     padding:0;
@@ -50,12 +76,12 @@ h1, h3{
     background-color: #FFF;
     border: 1px solid #DBE3E7;
     border-radius: 3px;
-    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
     position: fixed;
     text-align: left;
     color: #2B2E31;
     opacity: 0;
     pointer-events: none;
+    .box-shadow(1px 3px 1px, 0.08);
 }
 
 .filters .filter-criteria{
@@ -83,7 +109,6 @@ h1, h3{
 .filters button{
     border-radius: 2px;
     background-color:  #4BC34B;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
     border: 0;
     color: #ffffff;
     font-weight: bold;
@@ -91,6 +116,7 @@ h1, h3{
     cursor: pointer;
     padding: 10px;
     margin-top: 10px;
+    .box-shadow(0 1px 1px, 0.12);
 }
 
 
@@ -102,7 +128,7 @@ h1, h3{
 
 .products-list{
     list-style: none;
-    margin-left:225px;
+    margin-left: 225px;
     max-width: 1500px;
     text-align: center;
     padding: 0;
@@ -131,9 +157,9 @@ h1, h3{
     background-color:#ffffff;
     border:1px solid #dbe3e7;
     border-radius: 3px;
-    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
 
     margin: 0 12px 12px 0;
+    .box-shadow(1px 3px 1px, 0.08);
 }
 
 .products-list > li.hidden{
@@ -146,22 +172,9 @@ h1, h3{
 .products-list .product-photo{
     display: block;
     text-align: center;
-
     width: 150px;
     box-sizing: border-box;
-
-    background-image: linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 33%);
-    background-image: -o-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 33%);
-    background-image: -moz-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 33%);
-    background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 33%);
-    background-image: -ms-linear-gradient(bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 33%);
-    background-image: -webkit-gradient(
-        linear,
-        right bottom,
-        right top,
-        color-stop(0, rgba(0,0,0,1)),
-        color-stop(0.33, rgba(0,0,0,0))
-    );
+    .background-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0), 0%, 33%);
 }
 
 /* The product name */
