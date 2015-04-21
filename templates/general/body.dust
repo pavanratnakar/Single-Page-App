@@ -12,7 +12,9 @@
                         <button>Clear filters</button>
                     </form>
                 </div>
-                <ul class="products-list"></ul>
+                <ul class="products-list">
+                    {>"general/product"/}
+                </ul>
             </div>
             <!-- END OF PAGE 1 -->
             <!-- PAGE 2 -->

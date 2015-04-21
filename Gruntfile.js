@@ -63,7 +63,8 @@ module.exports = function(grunt) {
             },
             js: {
                 files: {
-                    'dist/combo.min.js': ['src/js/*']
+                    'dist/combo.min.js': ['src/js/script.js'],
+                    'dist/combo_dust.min.js': ['src/js/script_dust.js']
                 }
             }
         },
@@ -81,22 +82,28 @@ module.exports = function(grunt) {
         },
         // Copy to dist
         copy: {
+            dustjs: {
+                expand: true,
+                cwd: 'node_modules/dustjs-linkedin/dist/',
+                src: 'dust-full.min.js',
+                dest: 'dist/'
+            },
             js: {
                 expand: true,
                 cwd: 'src/js',
-                src: 'script.js',
+                src: '*.js',
                 dest: 'dist/'
             },
             css: {
                 expand: true,
                 cwd: 'src/css',
-                src: 'style.css',
+                src: '*.css',
                 dest: 'dist/'
             },
             docs: {
                 expand: true,
                 cwd: 'dist',
-                src: ['combo.min.js'],
+                src: ['*.min.js'],
                 dest: 'docs/static'
             }
         },
