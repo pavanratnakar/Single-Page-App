@@ -15,6 +15,8 @@
         "grunt-contrib-less": "^0.12.0",
         "grunt-contrib-watch": "^0.6.1",
         "grunt-execute": "^0.2.2",
+        "eslint": "*",
+        "eslint-grunt": "^0.6.1",
         "express": "*"
     },
     "scripts": {

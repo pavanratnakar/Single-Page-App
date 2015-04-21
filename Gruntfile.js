@@ -32,6 +32,13 @@ module.exports = function(grunt) {
             }
         },
 
+        eslint: {
+            all: ['src/js/*.js'],
+            options: {
+                config: "config/eslint.json",
+            }
+        },
+
         jshint: {
             files: [
                 'gruntfile.js',
@@ -123,6 +130,7 @@ module.exports = function(grunt) {
     // Load module
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('eslint-grunt');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -135,6 +143,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'less:build',
         'less:minified',
+        'eslint',
         'jshint',
         'uglify',
         'cssmin',
