@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         },
 
         eslint: {
-            all: ['src/js/*.js', 'lib/*.js', 'app.js'],
+            all: ['src/js/*.js', 'lib/*.js', 'grunt/*/*.js', 'app.js'],
             options: {
                 config: "config/eslint.json",
             }
@@ -44,6 +44,7 @@ module.exports = function(grunt) {
                 'gruntfile.js',
                 'src/js/*.js',
                 'lib/*.js',
+                'grunt/*/*.js',
                 'app.js'
             ],
             options: {
@@ -163,5 +164,8 @@ module.exports = function(grunt) {
         'clean:test'
     ]);
 
-    grunt.registerTask('default', ['build', 'watch']);
+    // Load Tasks
+    grunt.loadTasks('grunt/tasks');
+
+    grunt.registerTask('default', ['assets', 'build', 'watch']);
 };
