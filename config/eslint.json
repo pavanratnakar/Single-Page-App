@@ -8,5 +8,7 @@
         "jQuery": false,
         "Handlebars": false
     },
-    "rules": {}
+    "rules": {
+        "no-underscore-dangle": false
+    }
 }
