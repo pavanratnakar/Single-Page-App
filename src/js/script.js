@@ -1,9 +1,6 @@
 /*global $:false, jQuery:false, Handlebars:false, window:false*/
 /*!
  * App v0.1.0
- *
- * Released under the MIT license
- * https://github.com/fians/Waves/blob/master/LICENSE
  */
 $(function () {
     "use strict";
