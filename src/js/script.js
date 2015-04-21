@@ -2,7 +2,7 @@
 /*!
  * App v0.1.0
  */
-$(function () {
+jQuery(function($) {
     "use strict";
     var filters = {},
         products = [],
@@ -178,4 +178,4 @@ $(function () {
         render(window.location.hash);
     });
 
-})(jQuery);
+});

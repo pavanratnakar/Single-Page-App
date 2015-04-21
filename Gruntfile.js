@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         },
 
         eslint: {
-            all: ['src/js/*.js'],
+            all: ['src/js/*.js', 'lib/*.js', 'app.js'],
             options: {
                 config: "config/eslint.json",
             }
@@ -43,11 +43,14 @@ module.exports = function(grunt) {
             files: [
                 'gruntfile.js',
                 'src/js/*.js',
+                'lib/*.js',
+                'app.js'
             ],
             options: {
                 globals: {
                     console: true
-                }
+                },
+                node: true
             }
         },
 
