@@ -7,7 +7,6 @@
 ## License
 
 ## Todo
-1. Integration with dust.js
-2. Integration with mocha
-3. Integration with chai
-4. Use react.js for views
+1. Integration with mocha
+2. Integration with chai
+3. Use react.js for views
