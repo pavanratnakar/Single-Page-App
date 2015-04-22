@@ -1,5 +1,4 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
         <script src="dist/dust-full.min.js"></script>
         <script src="dist/templates/templates.js"></script>
         <script src="dist/combo_dust.min.js"></script>
