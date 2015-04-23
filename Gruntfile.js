@@ -1,4 +1,6 @@
-var fs = require('fs');
+"use strict";
+
+var fs = require("fs");
 
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -6,7 +8,7 @@ module.exports = function(grunt) {
             build: {
                 options: {},
                 files: {
-                    'dist/style_less.css': 'src/less/style.less'
+                    "dist/style_less.css": "src/less/style.less"
                 }
             },
             minified: {
@@ -14,7 +16,7 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    'dist/style_less.min.css': 'src/less/style.less'
+                    "dist/style_less.min.css": "src/less/style.less"
                 }
             },
             // re-minify everything in tests/ so that they all
@@ -23,29 +25,35 @@ module.exports = function(grunt) {
                 options: {
                     cleancss: true,
                     cleancssOptions: {
-                        keepSpecialComments: '0'
+                        keepSpecialComments: "0"
                     }
                 },
                 files: {
-                    'tests/less/style_less.min.css': 'src/less/style.less'
+                    "tests/less/style_less.min.css": "src/less/style.less"
                 }
             }
         },
 
         eslint: {
-            all: ['src/js/*.js', 'lib/*.js', 'grunt/*/*.js', 'app.js'],
+            all: [
+                "gruntfile.js",
+                "src/js/*.js",
+                "lib/*.js",
+                "grunt/*/*.js",
+                "app.js"
+            ],
             options: {
-                config: "config/eslint.json",
+                config: "config/eslint.json"
             }
         },
 
         jshint: {
             files: [
-                'gruntfile.js',
-                'src/js/*.js',
-                'lib/*.js',
-                'grunt/*/*.js',
-                'app.js'
+                "gruntfile.js",
+                "src/js/*.js",
+                "lib/*.js",
+                "grunt/*/*.js",
+                "app.js"
             ],
             options: {
                 globals: {
@@ -60,12 +68,12 @@ module.exports = function(grunt) {
                 mangle: true,  // false when debugging
                 compress: true,  // false when debugging
                 sourceMap: false,
-                preserveComments: 'some'
+                preserveComments: "some"
             },
             js: {
                 files: {
-                    'dist/combo.min.js': ['src/js/script.js'],
-                    'dist/combo_dust.min.js': ['src/js/script_dust.js']
+                    "dist/combo.min.js": ["src/js/script.js"],
+                    "dist/combo_dust.min.js": ["src/js/script_dust.js"]
                 }
             }
         },
@@ -74,10 +82,10 @@ module.exports = function(grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'src/css',
-                    src: ['*.css', '!*.min.css'],
-                    dest: 'dist',
-                    ext: '.min.css'
+                    cwd: "src/css",
+                    src: ["*.css", "!*.min.css"],
+                    dest: "dist",
+                    ext: ".min.css"
                 }]
             }
         },
@@ -85,27 +93,27 @@ module.exports = function(grunt) {
         copy: {
             dustjs: {
                 expand: true,
-                cwd: 'node_modules/dustjs-linkedin/dist/',
-                src: 'dust-full.min.js',
-                dest: 'dist/'
+                cwd: "node_modules/dustjs-linkedin/dist/",
+                src: "dust-full.min.js",
+                dest: "dist/"
             },
             js: {
                 expand: true,
-                cwd: 'src/js',
-                src: '*.js',
-                dest: 'dist/'
+                cwd: "src/js",
+                src: "*.js",
+                dest: "dist/"
             },
             css: {
                 expand: true,
-                cwd: 'src/css',
-                src: '*.css',
-                dest: 'dist/'
+                cwd: "src/css",
+                src: "*.css",
+                dest: "dist/"
             },
             docs: {
                 expand: true,
-                cwd: 'dist',
-                src: ['*.min.js'],
-                dest: 'docs/static'
+                cwd: "dist",
+                src: ["*.min.js"],
+                dest: "docs/static"
             }
         },
 
@@ -119,52 +127,52 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            test: ['tests/*']
+            test: ["tests/*"]
         },
 
         watch: {
             script: {
                options: {
                     spawn: false,
-                    event: ['added', 'deleted', 'changed']
+                    event: ["added", "deleted", "changed"]
                 },
-                files: ['src/**/*.js', 'src/**/*.css', 'src/**/*.less', 'templates/**/*'],
-                tasks: ['build']
+                files: ["src/**/*.js", "src/**/*.css", "src/**/*.less", "templates/**/*"],
+                tasks: ["build"]
             },
             grunt: {
-                files: ['Gruntfile.js']
+                files: ["Gruntfile.js"]
             }
         }
     });
 
     // Load module
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('eslint-grunt');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-execute');
-    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks("grunt-contrib-concat");
+    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("eslint-grunt");
+    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-uglify");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-execute");
+    grunt.loadNpmTasks("grunt-contrib-clean");
 
     // Create grunt task
-    grunt.registerTask('build', [
-        'less:build',
-        'less:minified',
-        'eslint',
-        'jshint',
-        'uglify',
-        'cssmin',
-        'copy',
-        'less:test',
-        'execute:test',
-        'clean:test'
+    grunt.registerTask("build", [
+        "less:build",
+        "less:minified",
+        "eslint",
+        "jshint",
+        "uglify",
+        "cssmin",
+        "copy",
+        "less:test",
+        "execute:test",
+        "clean:test"
     ]);
 
     // Load Tasks
-    grunt.loadTasks('grunt/tasks');
+    grunt.loadTasks("grunt/tasks");
 
-    grunt.registerTask('default', ['assets', 'build', 'watch']);
+    grunt.registerTask("default", ["assets", "build", "watch"]);
 };
