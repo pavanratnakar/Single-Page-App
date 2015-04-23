@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    'tests/less/style_less.min.css': 'src/less/style_less.less'
+                    'tests/less/style_less.min.css': 'src/less/style.less'
                 }
             }
         },
@@ -109,7 +109,6 @@ module.exports = function(grunt) {
             }
         },
 
-        //convert less to stylus
         execute: {
             test: {
                 call: function(grunt, options, async) {
@@ -129,7 +128,7 @@ module.exports = function(grunt) {
                     spawn: false,
                     event: ['added', 'deleted', 'changed']
                 },
-                files: ['src/**/*.js', 'src/**/*.css', 'src/**/*.less'],
+                files: ['src/**/*.js', 'src/**/*.css', 'src/**/*.less', 'templates/**/*'],
                 tasks: ['build']
             },
             grunt: {
