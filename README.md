@@ -5,8 +5,8 @@
 2. Do npm install
 3. node app.js
 4. Access
-	1. http://localhost:8002
-	2. http://localhost:8002/dust
+	1. http://localhost:8001
+	2. http://localhost:8001/dust
 
 ## Todo
 1. Integration with mocha
