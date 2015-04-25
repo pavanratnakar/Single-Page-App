@@ -39,6 +39,7 @@ module.exports = function(grunt) {
                 "gruntfile.js",
                 "src/js/*.js",
                 "lib/*.js",
+                "lib/*/*.js",
                 "grunt/*/*.js",
                 "app.js"
             ],
@@ -136,7 +137,7 @@ module.exports = function(grunt) {
                     spawn: false,
                     event: ["added", "deleted", "changed"]
                 },
-                files: ["src/**/*.js", "src/**/*.css", "src/**/*.less", "templates/**/*"],
+                files: ["src/**/*.js", "src/**/*.css", "src/**/*.less", "templates/**/*", "langs/*"],
                 tasks: ["build"]
             },
             grunt: {

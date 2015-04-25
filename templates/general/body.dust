@@ -5,7 +5,7 @@
                 <div class="filters">
                     <form>
                         <div class="filter-criteria">
-                            <span>Category</span>
+                            <span>{@translate key="Category.Title" /}</span>
                             <label><input type="checkbox" name="category" value="nature">Nature</label>
                             <label><input type="checkbox" name="category" value="people">People</label>
                         </div>

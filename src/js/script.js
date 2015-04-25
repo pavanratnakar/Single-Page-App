@@ -95,12 +95,12 @@ jQuery(function($) {
         allProducts
             .addClass("hidden")
             .each(function (i, n) {
-            products.forEach(function (p) {
-                if (parseInt(p.id, 10) === parseInt($(n).data("index"), 10)) {
-                    $(n).removeClass("hidden");
-                }
+                products.forEach(function (p) {
+                    if (parseInt(p.id, 10) === parseInt($(n).data("index"), 10)) {
+                        $(n).removeClass("hidden");
+                    }
+                });
             });
-        });
         page.addClass("visible");
     }
 
