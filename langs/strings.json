@@ -1,13 +1,13 @@
 {
-	"Meta.Title": "Single Page App Without a Framework",
+    "Meta.Title": "Single Page App Without a Framework",
 
-	"Category.Title": "Category",
+    "Category.Title": "Category",
 
-	"Filters.Clear": "Clear filters",
+    "Filters.Clear": "Clear filters",
 
-	"Overlay.Title": "Single product view",
-	"Overlay.Close": "x",
+    "Overlay.Title": "Single product view",
+    "Overlay.Close": "x",
 
-	"NotFound.Title": "Sorry, something went wrong :("
+    "NotFound.Title": "Sorry, something went wrong :("
 
 }
