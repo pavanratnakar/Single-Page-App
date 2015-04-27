@@ -44,7 +44,7 @@ module.exports = function(grunt) {
                 "app.js"
             ],
             options: {
-                config: "config/eslint.json"
+                config: "build-config/eslint.json"
             }
         },
 

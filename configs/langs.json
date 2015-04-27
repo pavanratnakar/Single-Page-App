@@ -1,0 +1,10 @@
+{
+    "default": {
+        "lang": "en-US",
+        "intl": "us"
+    },
+    "intls": {
+        "us": ["en-US"],
+        "de": ["de-DE"]
+    }
+}

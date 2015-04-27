@@ -1,0 +1,19 @@
+[{
+    "feature": {
+        "clear": true
+    }
+}, {
+    "selector": {
+        "intl": "us"
+    },
+    "feature": {
+        "clear": true
+    }
+}, {
+    "selector": {
+        "intl": "de"
+    },
+    "feature": {
+        "clear": false
+    }
+}]

@@ -3,6 +3,7 @@
             <!-- PAGE 1 -->
             <div class="all-products page">
                 <div class="filters">
+                    <p></p>
                     <form>
                         <div class="filter-criteria">
                             <span>{@translate key="Category.Title" /}</span>
