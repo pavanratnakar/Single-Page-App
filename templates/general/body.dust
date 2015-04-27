@@ -9,7 +9,9 @@
                             <label><input type="checkbox" name="category" value="nature">Nature</label>
                             <label><input type="checkbox" name="category" value="people">People</label>
                         </div>
+                        {?config.feature.clear}
                         <button>{@translate key="Filters.Clear" /}</button>
+                        {/config.feature.clear}
                     </form>
                 </div>
                 <ul class="products-list">
