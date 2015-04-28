@@ -6,7 +6,9 @@
     "globals": {
         "$": false,
         "jQuery": false,
-        "Handlebars": false
+        "Handlebars": false,
+        "window": false,
+        "singlePageApp": true
     },
     "rules": {
         "no-underscore-dangle": false

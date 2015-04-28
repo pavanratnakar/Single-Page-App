@@ -74,7 +74,7 @@ module.exports = function(grunt) {
             js: {
                 files: {
                     "dist/combo.min.js": ["src/js/script.js"],
-                    "dist/combo_dust.min.js": ["src/js/script_dust.js"]
+                    "dist/combo_dust.min.js": ["src/js/dust_engine.js", "src/js/script_dust.js"]
                 }
             }
         },

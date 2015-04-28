@@ -1,4 +1,5 @@
 {#products}
+{@translate key="Meta.Title" /}
     <li data-index="{id}">
         <a href="#" class="product-photo">
             <img src="http://farm7.staticflickr.com/{server}/{id}_{secret}_q.jpg" height="150" alt="{title}"/>

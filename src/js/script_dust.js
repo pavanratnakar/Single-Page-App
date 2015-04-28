@@ -1,9 +1,10 @@
-/*global $:false, jQuery:false, dust:true, window:false*/
+/*global $:false, jQuery:false, window:false*/
 /*!
  * App v0.1.0
  */
 jQuery(function($) {
     "use strict";
+
     var filters = {},
         products = [],
         checkboxes = $(".all-products input[type=checkbox]");
@@ -69,7 +70,7 @@ jQuery(function($) {
     function generateAllProductsHTML (data) {
         var list = $(".all-products .products-list");
 
-        dust.render("general/product", {products: data}, function (err, html) {
+        singlePageApp.dust.render("general/product", {products: data}, function (err, html) {
             if (!err) {
                 list.append(html);
             }

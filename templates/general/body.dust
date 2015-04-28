@@ -15,7 +15,6 @@
                     </form>
                 </div>
                 <ul class="products-list">
-                    {>"general/product"/}
                 </ul>
             </div>
             <!-- END OF PAGE 1 -->

@@ -1,4 +1,7 @@
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+            var data={config:{config|js|s}, context:{context|js|s}, i18n:{i18n|js|s}};
+        </script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="dist/dust-full.min.js"></script>
         <script src="dist/templates/templates.js"></script>
         <script src="dist/combo_dust.min.js"></script>
