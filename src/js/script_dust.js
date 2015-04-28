@@ -171,6 +171,11 @@ jQuery(function($) {
     }
     $.getJSON("data/products.json", function (data) {
         products = data;
+        singlePageApp.dust.load({
+            i18n: window.data.i18n,
+            config: window.data.config,
+            context: window.data.context
+        });
         initEvents();
         generateAllProductsHTML(data);
         // Manually trigger a hashchange to start the app.
