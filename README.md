@@ -11,6 +11,4 @@
 ## Todo
 1. Integration with mocha
 2. Integration with chai
-3. Build configuration system
-4. Add lang support
-5. Add device based templating
+3. Add device based templating
