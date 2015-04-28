@@ -1,6 +1,9 @@
 [{
     "feature": {
         "clear": true
+    },
+    "flickr": {
+        "farm": "farm7.staticflickr.com"
     }
 }, {
     "selector": {
@@ -8,12 +11,32 @@
     },
     "feature": {
         "clear": true
-    }
+    },
+    "categories": [
+        {
+            "name": "nature",
+            "title": "Nature"
+        },
+        {
+            "name": "people",
+            "title": "People"
+        }
+    ]
 }, {
     "selector": {
         "intl": "de"
     },
     "feature": {
-        "clear": false
-    }
+        "clear": true
+    },
+    "categories": [
+        {
+            "name": "nature",
+            "title": "Naturaleza"
+        },
+        {
+            "name": "people",
+            "title": "Gente"
+        }
+    ]
 }]

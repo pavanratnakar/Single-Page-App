@@ -171,7 +171,7 @@ jQuery(function($) {
     }
     $.getJSON("data/products.json", function (data) {
         products = data;
-        singlePageApp.dust.load({
+        singlePageApp.dust({
             i18n: window.data.i18n,
             config: window.data.config,
             context: window.data.context

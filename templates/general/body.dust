@@ -6,8 +6,9 @@
                     <form>
                         <div class="filter-criteria">
                             <span>{@translate key="Category.Title" /}</span>
-                            <label><input type="checkbox" name="category" value="nature">Nature</label>
-                            <label><input type="checkbox" name="category" value="people">People</label>
+                            {#config.categories}
+                                <label><input type="checkbox" name="category" value={name}>{title}</label>
+                            {/config.categories}
                         </div>
                         {?config.feature.clear}
                         <button>{@translate key="Filters.Clear" /}</button>
@@ -15,6 +16,7 @@
                     </form>
                 </div>
                 <ul class="products-list">
+                    {>"general/product"/}
                 </ul>
             </div>
             <!-- END OF PAGE 1 -->

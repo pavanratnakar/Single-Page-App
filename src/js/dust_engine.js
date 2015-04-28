@@ -5,12 +5,16 @@
 
 var singlePageApp = window.singlePageApp || {};
 
-singlePageApp.dust = {
-    load: function (config) {
+singlePageApp.dust = function (config) {
+
+    function DustWrapper (config) {
         this.context = dust.makeBase(config);
-    },
-    render: function (name, context, callback) {
-        return dust.render(name, (this.context && this.context.push(context)) || context, callback);
     }
+
+    DustWrapper.prototype.render = function (name, context, callback) {
+        return dust.render(name, (this.context && this.context.push(context)) || context, callback);
+    };
+
+    singlePageApp.dust = new DustWrapper(config);
+
 };
-singlePageApp.dust.load();
